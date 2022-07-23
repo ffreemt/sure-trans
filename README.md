@@ -17,4 +17,12 @@ pip install sure-trans
 ```python
 from sure_trans import sure_trans
 
+print(sure_trans("书山有路勤为径", from_language="zh", to_language="en"))
+# api used: iciba_api, took 4.57s
+# only the diligent will be rewarded by God in their pursuit for knowledge
+
+print(sure_trans("书中自有黄金屋", from_language="zh", to_language="en"))
+# api used: caiyun_api, took 1.32s
+# The book has its own house of gold
+
 ```
