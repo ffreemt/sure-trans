@@ -1,0 +1,21 @@
+{
+    "dependencies": {
+        "npm-run-all": "^4.1.5"
+    },
+    "scripts": {
+        "start": "pyright && pytest && yarn style",
+        "test": "nodemon -w tests -w sure_trans -x pytest tests",
+        "pyright": "nodemon -w sure_trans -w .venv -e .py -x pyright sure_trans tests",
+        "pytest": "nodemon -w tests -w sure_trans -e .py -x pytest tests sure_trans",
+        "style": "nodemon -w sure_trans -w tests -x \"black tests sure_trans && python -m flake8\"",
+        "docstyle": "nodemon -w sure_trans -w tests -x pydocstyle --convention=google tests sure_trans",
+        "pylint": "nodemon -w sure_trans -e .py -x pylint sure_trans",
+        "test:sure_trans": "nodemon -w tests -e .py -x pytest -k sure_trans tests",
+        "publish": "poetry build && poetry publish",
+        "black": "black tests sure_trans",
+        "flake8": "flake8 tests sure_trans",
+        "pflake8": "pflake8 tests sure_trans",
+        "pep257": "pep257 tests sure_trans",
+        "final": "run-s docstyle black flake8 pytest"
+    }
+}
